@@ -35,6 +35,9 @@ public class BookingServiceImpl implements BookingService{
 		passrepo.setflag();
 		//int custid=booking.getCustomerid();
 		//int packid=booking.getPackageid();
+		System.out.println("hello");
+		System.out.println(booking);
+		System.out.println("hello");
 		bookrepo.save(booking);
 		
 	}

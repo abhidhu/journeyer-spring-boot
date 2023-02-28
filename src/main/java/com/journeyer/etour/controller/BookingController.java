@@ -59,7 +59,8 @@ public class BookingController {
 	@PostMapping(value="/booking/", headers = "Accept=application/json")
 	public void postbookingdetails(@RequestBody Booking booking)
 	{
-		System.out.println("hiiii");
+		System.out.println(booking.getBookingdate());
+		System.out.println("Hello");
 		
 		bookservice.postbooking(booking);
 		

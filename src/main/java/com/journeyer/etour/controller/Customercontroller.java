@@ -97,6 +97,9 @@ public class Customercontroller {
 	//for signup
 	@PostMapping("/signup")
 	  public ResponseEntity<?> registerUser(@RequestBody SignupRequest  signUpRequest) {
+		
+		
+		 System.out.println("Hello");
 	    if (userRepository.existsByMobile(signUpRequest.getMobile())) {
 	      return ResponseEntity
 	          .badRequest()
@@ -113,7 +116,8 @@ public class Customercontroller {
 	    Customer user = new Customer(signUpRequest.getFirstname(),signUpRequest.getLastname(),
 	    		signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()),signUpRequest.getGender(),signUpRequest.getMobile(),signUpRequest.getDob()
 	    		);
-
+	    	
+	    System.out.println(user);
 	   
 	    Set<String> strRoles = signUpRequest.getRole();
 	    Set<Role> roles = new HashSet<>();
