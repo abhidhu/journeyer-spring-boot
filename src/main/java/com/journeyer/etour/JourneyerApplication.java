@@ -15,17 +15,7 @@ public class JourneyerApplication {
 		SpringApplication.run(JourneyerApplication.class, args);
 	}
 	
-//	@EventListener(ApplicationReadyEvent.class)
-//	public void triggerMail() throws MessagingException {
-//
-////	senderservice.sendSimpleEmail("darshanraundal55@gmail.com",
-////			"This is email body",
-////			"This is email subject");
-//	senderservice.sendEmailWithAttachment("darshanraundal55@gmail.com",
-//		"This is Arjun Codes",
-//		"Resume",
-//		"C:\\CDAC vita\\all.pdf");
-//	}
+
 	
 }
 

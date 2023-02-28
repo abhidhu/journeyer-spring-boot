@@ -59,6 +59,8 @@ public class BookingController {
 	@PostMapping(value="/booking/", headers = "Accept=application/json")
 	public void postbookingdetails(@RequestBody Booking booking)
 	{
+		System.out.println("hiiii");
+		
 		bookservice.postbooking(booking);
 		
 		int custid=booking.getCustomerid();
