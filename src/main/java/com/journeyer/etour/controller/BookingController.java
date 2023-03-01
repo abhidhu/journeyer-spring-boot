@@ -20,6 +20,13 @@ import com.journeyer.etour.repository.Bookingrepo;
 import com.journeyer.etour.repository.Customerrepo;
 import com.journeyer.etour.services.BookingService;
 import com.journeyer.etour.services.Emailservice;
+//---------------------------------------------------
+
+
+
+
+
+
 
 @RestController
 @CrossOrigin
@@ -67,7 +74,7 @@ public class BookingController {
 		bookservice.postbooking(booking);
 		
 		
-		/*
+		
 		int custid=booking.getCustomerid();
 		int packid=booking.getPackageid();
 		   { 
@@ -98,7 +105,7 @@ public class BookingController {
 			     }
 			    	 
 			 }
-			 */
+			 
 	}
 	
 	//for customer profile
