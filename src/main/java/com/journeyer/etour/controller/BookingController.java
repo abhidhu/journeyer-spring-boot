@@ -21,6 +21,7 @@ import com.journeyer.etour.repository.Customerrepo;
 import com.journeyer.etour.services.BookingService;
 import com.journeyer.etour.services.Emailservice;
 //---------------------------------------------------
+import com.journeyer.etour.services.SendEmail;
 
 
 
@@ -34,6 +35,10 @@ public class BookingController {
 	
 	@Autowired
 	BookingService bookservice;
+	
+	@Autowired
+	SendEmail sendEmail;
+	
 	
 	@Autowired
 	Bookingrepo bookrepo;
@@ -81,30 +86,45 @@ public class BookingController {
 			   	LocalDate now=LocalDate.now();
 			    String newnow=now.toString();
 			     List<Booking> bookingdetails =bookrepo.findAll();
-			   //senderservice.sendSimpleEmail("darshanraundal55@gmail.com", "This is email body",  "This is email subject"); 
+			    
 			     for(Booking book:bookingdetails)
 			     {
+			    	
 			    	 int pkgid=book.getPackageid();
 			    	 int cid=book.getCustomerid();
 			    	 String date=book.getBookingdate();
 			    	 if(cid==custid && date.equals(newnow) && pkgid==packid)
 			    	 {
-			    		Customer cust=custrepo.findBycustomercid(cid);
-			    		
-			    	 try {
-						senderservice.sendEmailWithAttachment(cust.getEmail(), "Your Booking Successful",
-								   "Invoice of booking", "C:\\Users\\dhuma\\Downloads\\Invoice"+custid+pkgid+newnow+".pdf");
-					} catch (MessagingException e) {
-						// TODO Auto-generated catch block
-						
-						e.printStackTrace();
-						
-						for(int i=0;i<=10;i++)
-							System.out.println("Hello");
-					}  }
+				    		Customer cust=custrepo.findBycustomercid(cid);
+				    		
+				    	 
+				    		 String subject="Your Booking Successful";
+				    		 String body=book.toString();
+				    		 
+				    		 sendEmail.sendEmail(cust.getEmail(), subject, body);
+				    		 
+				    		 try {
+				    		 }catch(Exception e) {
+									e.printStackTrace();
+								}
+	//						senderservice.sendEmailWithAttachment(cust.getEmail(), "Your Booking Successful",
+	//								   "Invoice of booking", "C:\\Users\\dhuma\\Downloads\\Invoice"+custid+pkgid+newnow+".pdf");
+//						} catch (MessagingException e) {
+//							// TODO Auto-generated catch block
+//							
+//							e.printStackTrace();
+//							
+//							for(int i=0;i<=10;i++)
+//								System.out.println("Hello");
+//						}
+				    	
+			    	 }
 			     }
 			    	 
 			 }
+		   
+		  
+			 
 			 
 	}
 	
