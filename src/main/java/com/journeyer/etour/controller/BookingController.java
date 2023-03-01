@@ -60,10 +60,14 @@ public class BookingController {
 	public void postbookingdetails(@RequestBody Booking booking)
 	{
 		System.out.println(booking.getBookingdate());
+		for(int i=0;i<=10;i++)
 		System.out.println("Hello");
+		
 		
 		bookservice.postbooking(booking);
 		
+		
+		/*
 		int custid=booking.getCustomerid();
 		int packid=booking.getPackageid();
 		   { 
@@ -82,15 +86,19 @@ public class BookingController {
 			    		
 			    	 try {
 						senderservice.sendEmailWithAttachment(cust.getEmail(), "Your Booking Successful",
-								   "Invoice of booking", "C:\\Users\\ASUS\\Downloads\\Invoice"+custid+pkgid+newnow+".pdf");
+								   "Invoice of booking", "C:\\Users\\dhuma\\Downloads\\Invoice"+custid+pkgid+newnow+".pdf");
 					} catch (MessagingException e) {
 						// TODO Auto-generated catch block
 						
 						e.printStackTrace();
+						
+						for(int i=0;i<=10;i++)
+							System.out.println("Hello");
 					}  }
 			     }
 			    	 
 			 }
+			 */
 	}
 	
 	//for customer profile

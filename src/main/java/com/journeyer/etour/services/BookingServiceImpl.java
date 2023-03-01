@@ -40,6 +40,9 @@ public class BookingServiceImpl implements BookingService{
 		System.out.println("hello");
 		bookrepo.save(booking);
 		
+		for(int i=0;i<=10;i++)
+			System.out.println("2123");
+		
 	}
 
 	@Override
