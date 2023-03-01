@@ -23,5 +23,9 @@ public interface Customerrepo extends JpaRepository<Customer, Long>{
 
 	Boolean existsByMobile(String mobile);
 	Boolean existsByEmail(String email);
+	
+	//SELECT u FROM User u
+	//@Query(value = "select * from Customer")
+	//List<Customer> getAll();
 
 }

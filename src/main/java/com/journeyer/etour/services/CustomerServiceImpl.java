@@ -20,6 +20,14 @@ public class CustomerServiceImpl implements CustomerService
 		// TODO Auto-generated method stub
 		return custrepo.findBycustomerid(cust_Id);
 	}
+	
+	@Override
+	public List<Customer> getAllCustomer() {
+		// TODO Auto-generated method stub	
+		//return custrepo.getAll();
+		return custrepo.findAll();
+		
+	}
 
 	/*
 	 * @Override public String getallcustomers(Customer customer) { // TODO
@@ -42,6 +50,8 @@ public class CustomerServiceImpl implements CustomerService
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 	
 	
 
