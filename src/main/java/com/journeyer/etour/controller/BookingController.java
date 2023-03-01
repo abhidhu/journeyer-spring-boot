@@ -22,6 +22,7 @@ import com.journeyer.etour.services.BookingService;
 import com.journeyer.etour.services.Emailservice;
 //---------------------------------------------------
 import com.journeyer.etour.services.SendEmail;
+import com.journeyer.etour.services.utility.App;
 
 
 
@@ -71,6 +72,13 @@ public class BookingController {
 	@PostMapping(value="/booking/", headers = "Accept=application/json")
 	public void postbookingdetails(@RequestBody Booking booking)
 	{
+		
+		System.out.println("inside booking details");
+		
+		App.main1();
+		
+		System.out.println("inside booking");
+		
 		System.out.println(booking.getBookingdate());
 		for(int i=0;i<=10;i++)
 		System.out.println("Hello");
@@ -106,7 +114,7 @@ public class BookingController {
 				    		 try {
 				    		 }catch(Exception e) {
 									e.printStackTrace();
-								}
+							}
 	//						senderservice.sendEmailWithAttachment(cust.getEmail(), "Your Booking Successful",
 	//								   "Invoice of booking", "C:\\Users\\dhuma\\Downloads\\Invoice"+custid+pkgid+newnow+".pdf");
 //						} catch (MessagingException e) {
