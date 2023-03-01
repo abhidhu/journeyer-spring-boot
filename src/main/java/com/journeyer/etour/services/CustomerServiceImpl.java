@@ -24,9 +24,13 @@ public class CustomerServiceImpl implements CustomerService
 	@Override
 	public List<Customer> getAllCustomer() {
 		// TODO Auto-generated method stub	
-		//return custrepo.getAll();
 		return custrepo.findAll();
-		
+	}
+	
+	@Override
+	public Customer getcustomerbycustid(int cust_Id) {
+		// TODO Auto-generated method stub
+		return custrepo.findBycustomercid(cust_Id);
 	}
 
 	/*
@@ -45,11 +49,7 @@ public class CustomerServiceImpl implements CustomerService
 	 * }
 	 */
 	
-	@Override
-	public Customer getcustomerbycustid(int cust_Id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	
 	

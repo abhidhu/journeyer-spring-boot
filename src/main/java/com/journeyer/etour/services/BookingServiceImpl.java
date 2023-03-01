@@ -56,6 +56,11 @@ public class BookingServiceImpl implements BookingService{
 		// TODO Auto-generated method stub
 		bookrepo.deleteById(bookingid);
 	}
+	
+	@Override
+	public List<Booking> getBookingByCustId(int id){
+		return bookrepo.findBybookingid(id);	
+	}
 
 		  
 	
