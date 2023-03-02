@@ -11,6 +11,4 @@ import com.journeyer.etour.modal.Role;
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long>{
 	Optional<Role> findByName(ERole name);
-	
-
 }

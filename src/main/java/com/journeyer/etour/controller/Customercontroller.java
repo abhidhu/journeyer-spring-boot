@@ -100,12 +100,14 @@ public class Customercontroller {
 		
 		
 		 System.out.println("Hello");
+		 //Checking the user mobile is all ready present  or not
 	    if (userRepository.existsByMobile(signUpRequest.getMobile())) {
 	      return ResponseEntity
 	          .badRequest()
 	          .body(new MessageResponse("Error: Mobile Number is already taken!"));
 	    }
-
+	    
+	  //Checking the user email is all ready present  or not
 	    if (userRepository.existsByEmail(signUpRequest.getEmail())) {
 	      return ResponseEntity
 	          .badRequest()
