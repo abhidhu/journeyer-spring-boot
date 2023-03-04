@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,7 @@ import com.journeyer .repository.RoleRepository;
 import com.journeyer .security.jwt.JwtUtils;
 import com.journeyer .security.services.UserDetailsImpl;
 import com.journeyer .services.CustomerService;
+
 
 @RestController
 @CrossOrigin
@@ -98,7 +100,6 @@ public class Customercontroller {
 	@PostMapping("/signup")
 	  public ResponseEntity<?> registerUser(@RequestBody SignupRequest  signUpRequest) {
 		
-		
 		 System.out.println("Hello");
 		 //Checking the user mobile is all ready present  or not
 	    if (userRepository.existsByMobile(signUpRequest.getMobile())) {
@@ -146,7 +147,7 @@ public class Customercontroller {
 	    }
 	    user.setRoles(roles);
 	    userRepository.save(user);
-
+		
 	    return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	    
 	}	

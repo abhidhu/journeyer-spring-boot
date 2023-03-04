@@ -8,14 +8,9 @@ import com.journeyer.services.Emailservice;
 
 @SpringBootApplication
 public class JourneyerApplication {
-
-	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(JourneyerApplication.class, args);
-	}
-	
-
+	}	
 	
 }
-
