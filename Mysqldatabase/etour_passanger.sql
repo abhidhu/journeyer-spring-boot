@@ -52,7 +52,7 @@ CREATE TABLE `passanger` (
 
 LOCK TABLES `passanger` WRITE;
 /*!40000 ALTER TABLE `passanger` DISABLE KEYS */;
-INSERT INTO `passanger` VALUES (134,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789753','2021-03-02','Male','Nashik','Maharashtra',1,6,97000,456789,NULL,1),(135,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789457','1991-06-04','Male','Nashik','Maharashtra',1,6,92000,422010,NULL,1),(136,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789124','1998-12-28','Male','Nashik','Maharashtra',61,6,26990,422010,NULL,1),(137,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789124','2021-03-23','Male','Nashik','Maharashtra',61,6,25200,422010,NULL,1);
+-- INSERT INTO `passanger` VALUES (134,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789753','2021-03-02','Male','Nashik','Maharashtra',1,6,97000,456789,NULL,1),(135,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789457','1991-06-04','Male','Nashik','Maharashtra',1,6,92000,422010,NULL,1),(136,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789124','1998-12-28','Male','Nashik','Maharashtra',61,6,26990,422010,NULL,1),(137,'DARSHAN','RAUNDAL','9422841267','Aishwarya Vihar,Ramehswar Nagar Kamtawada,',NULL,'123456789124','2021-03-23','Male','Nashik','Maharashtra',61,6,25200,422010,NULL,1);
 /*!40000 ALTER TABLE `passanger` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

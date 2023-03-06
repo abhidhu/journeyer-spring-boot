@@ -43,7 +43,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Admin','Admin','indiatour931@gmail.com','$2a$10$eVzd.FVEHtrPOz5Msbqew.vXdUtxqV/5LwMnLHjggzpDaaQIn4iUu','2022-03-03','Male','1234567891'),(6,'DARSHAN','RAUNDAL','darshanraundal55@gmail.com','$2a$10$O0eK.2207O0N/vxvjroBguf8srA0vIharEDt6EqtUXf74MikpCksS','2005-03-01','Male','9422841267'),(7,'hemraj','thakre','hemrajthakare80@gmail.com','$2a$10$n2UrD5CWjS2l/YdxQskaYu63c.FUKJx11zaaZFizZ2oRd7WoMto3O','1998-06-28','Male','7894561231');
+INSERT INTO `customer` VALUES (1,'Admin','Admin','journeyer101@gmail.com','$2a$10$W6UGx0EhWieJ9greYmbTwuFNWNjRmQdrjOsjHDqzCIB3yNB0ncHLS','2023-03-03','Male','1234567891');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

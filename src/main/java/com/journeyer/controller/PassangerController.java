@@ -34,6 +34,7 @@ public class PassangerController {
 	@PostMapping(value="/passangers")
 	public void postpassanger(@RequestBody Passanger passanger)
 	{
+		System.out.println(passanger);
 		passangerservice.postpassanger(passanger);
 		
 	}

@@ -66,8 +66,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       //.formLogin()
       //.loginPage("/login")
       //.loginProcessingUrl("/login");
-    
-     
 
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
   }

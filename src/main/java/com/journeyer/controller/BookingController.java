@@ -24,12 +24,6 @@ import com.journeyer.services.Emailservice;
 import com.journeyer.services.SendEmail;
 import com.journeyer.services.utility.App;
 
-
-
-
-
-
-
 @RestController
 @CrossOrigin
 public class BookingController {
