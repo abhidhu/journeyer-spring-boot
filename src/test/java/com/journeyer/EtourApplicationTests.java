@@ -1,4 +1,4 @@
-package com.indiatour;
+package com.journeyer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
