@@ -30,12 +30,12 @@ public class AdminController {
 		return customerService.getAllCustomer();
 	}
 	
-	@GetMapping(value="Admin/customer-booking/{custId}")
-	public List<Booking> getCustomerBooking(@PathVariable int custId) {
-		
-		
-		Customer cust=customerService.getcustomerbycustid(custId);
-		return bookingService.getBookingByCustId(custId);
-	
-	}	
+//	@GetMapping(value="Admin/customer-booking/{custId}")
+//	public List<Booking> getCustomerBooking(@PathVariable int custId) {
+//		
+//		
+//		Customer cust=customerService.getcustomerbycustid(custId);
+//		return bookingService.getBookingByCustId(custId);
+//	
+//	}	
 }
