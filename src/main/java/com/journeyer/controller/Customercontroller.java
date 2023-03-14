@@ -33,6 +33,7 @@ import com.journeyer .repository.RoleRepository;
 import com.journeyer .security.jwt.JwtUtils;
 import com.journeyer .security.services.UserDetailsImpl;
 import com.journeyer .services.CustomerService;
+import com.journeyer.services.utility.Validator;
 
 
 @RestController
@@ -58,6 +59,9 @@ public class Customercontroller {
 	
 	@Autowired
 	  JwtUtils jwtUtils;
+	
+	@Autowired
+	Validator validate;
 
 	//for checking
 	@GetMapping(value = "/customers") 
@@ -101,6 +105,34 @@ public class Customercontroller {
 	  public ResponseEntity<?> registerUser(@RequestBody SignupRequest  signUpRequest) {
 		
 		 System.out.println("Hello");
+		 //validating email
+		 if(!validate.validateEmail(signUpRequest.getEmail())) {
+			 return ResponseEntity
+			          .badRequest()
+			          .body(new MessageResponse("Error: Please enter a valide email!"));
+		 }
+		 
+		 //validating first name
+		 if(!validate.validateName(signUpRequest.getFirstname())) {
+			 return ResponseEntity
+			          .badRequest()
+			          .body(new MessageResponse("Error: Please enter a valide first name!"));
+		 }
+		 
+		//validating last name
+		 if(!validate.validateName(signUpRequest.getLastname())) {
+			 return ResponseEntity
+			          .badRequest()
+			          .body(new MessageResponse("Error: Please enter a valide last name!"));
+		 }
+		 
+		//validating mobile no
+		 if(!validate.validateMobile(signUpRequest.getMobile())) {
+			 return ResponseEntity
+			          .badRequest()
+			          .body(new MessageResponse("Error: Please enter a valide mobile no!"));
+		 }
+		 
 		 //Checking the user mobile is all ready present  or not
 	    if (userRepository.existsByMobile(signUpRequest.getMobile())) {
 	      return ResponseEntity
