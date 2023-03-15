@@ -3,8 +3,6 @@ package com.journeyer.controller;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.mail.MessagingException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,8 +19,7 @@ import com.journeyer.repository.Customerrepo;
 import com.journeyer.services.BookingService;
 import com.journeyer.services.Emailservice;
 //---------------------------------------------------
-import com.journeyer.services.SendEmail;
-import com.journeyer.services.utility.App;
+
 
 @RestController
 @CrossOrigin
@@ -30,9 +27,9 @@ public class BookingController {
 	
 	@Autowired
 	BookingService bookservice;
-	
+
 	@Autowired
-	SendEmail sendEmail;
+	Emailservice emailService;
 	
 	
 	@Autowired
@@ -69,7 +66,7 @@ public class BookingController {
 		
 		System.out.println("inside booking details");
 		
-		App.main1();
+
 		
 		System.out.println("inside booking");
 		
@@ -103,22 +100,12 @@ public class BookingController {
 				    		 String subject="Your Booking Successful";
 				    		 String body=book.toString();
 				    		 
-				    		 sendEmail.sendEmail(cust.getEmail(), subject, body);
-				    		 
 				    		 try {
+								 emailService.sendEmail(cust.getEmail(), subject, body);
 				    		 }catch(Exception e) {
 									e.printStackTrace();
 							}
-	//						senderservice.sendEmailWithAttachment(cust.getEmail(), "Your Booking Successful",
-	//								   "Invoice of booking", "C:\\Users\\dhuma\\Downloads\\Invoice"+custid+pkgid+newnow+".pdf");
-//						} catch (MessagingException e) {
-//							// TODO Auto-generated catch block
-//							
-//							e.printStackTrace();
-//							
-//							for(int i=0;i<=10;i++)
-//								System.out.println("Hello");
-//						}
+
 				    	
 			    	 }
 			     }

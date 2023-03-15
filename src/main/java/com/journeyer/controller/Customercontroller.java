@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.journeyer.services.Emailservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -43,6 +44,9 @@ public class Customercontroller {
 	
 	@Autowired
 	AuthenticationManager authenticationManager;
+
+	@Autowired
+	Emailservice emailService;
 
 	@Autowired
 	Customerrepo userRepository;
@@ -153,7 +157,7 @@ public class Customercontroller {
 	    		);
 	    	
 	    System.out.println(user);
-	   
+
 	    Set<String> strRoles = signUpRequest.getRole();
 	    Set<Role> roles = new HashSet<>();
 
@@ -178,6 +182,12 @@ public class Customercontroller {
 	      });
 	    }
 	    user.setRoles(roles);
+		System.out.println("before email send");
+		try{
+			emailService.sendEmail(user.getEmail(), "You have been successfully register to Journeyer", "Welcome to Journeyer family");;
+		}catch (Exception e){
+			System.out.println("email send failed");
+		}
 	    userRepository.save(user);
 		
 	    return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
