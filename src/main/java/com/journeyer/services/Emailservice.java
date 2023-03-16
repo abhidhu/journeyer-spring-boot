@@ -30,17 +30,25 @@ public class Emailservice {
     }
 
 
-    public static void  sendEmail(String to,String subject,String test ){
+    public static boolean  sendEmail(String to,String subject,String test ){
         JavaMailSender mailSender = getJavaMailSender();
 
-        // create email message
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(test);
+        try{
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(to);
+            message.setSubject(subject);
+            message.setText(test);
 
-        // send the email
-        mailSender.send(message);
+            // send the email
+            mailSender.send(message);
+        }catch (Exception ex){
+            System.out.println("Email not send for otp");
+            return false;
+        }
+        // create email message
+
+
+        return true;
 
     }
 
@@ -54,7 +62,7 @@ public class Emailservice {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(to);
             String subject="OTP:"+otp;
-            message.setSubject(subject);
+            message.setSubject(otp);
 
 
             // send the email
